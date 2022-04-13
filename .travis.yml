@@ -8,3 +8,25 @@ before_install:
 
 script:
   - docker run -e CI=true sonnyjon/docker-react npm run test
+
+# Below are items needed to deploy to AWS. Uncomment when you have
+# an AWS account up and running. Values in "" are what you gave in
+# in AWS setup.
+#
+# Example: 
+#   AWS Console: All Applications > docker > Docker-env
+#   URL: Docker-env.qbtbvwcxmh.us-west-2.elasticbeanstalk.com
+#   elasticbeanstalk-us-west-2-306476627547
+#
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-2"
+#   # app name
+#   app: "docker"
+#   env: "Docker-env"
+#   bucket_name: "elasticbeanstalk-us-west-2-306476627547"
+#   bucket_path: "docker"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
